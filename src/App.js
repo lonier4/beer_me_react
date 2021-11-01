@@ -1,25 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {useState} from "react";
+import { Switch, Route} from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './views/Home';
+import Beer from './views/Beer'
+import axios from 'axios';
 
-function App() {
-  return (
+const App = (props) => {
+  const [beers, setBeers] = useState([]);
+
+  const getBeers = async () => {
+    let response = await axios.get('https://api.punkapi.com/v2/beers?per_page=80');
+    return response.data
+  }
+
+  const useBeersData = async () => {
+    let data = await getBeers();
+    setBeers(data);
+    console.log(beers);
+  }
+
+
+    return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar useBeersData={useBeersData}/>
+      <Switch>
+        <Route exact path='/' render={() => <Home title={'Beer Me'} beers={beers} setBeers={setBeers} /> } />
+        <Route path='/allbeers' render={() => <Beer title={'Beer Me'} beers={beers} /> } />
+        </Switch>
     </div>
   );
-}
+};
+
 
 export default App;
