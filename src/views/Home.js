@@ -1,12 +1,14 @@
 import React from "react";
+import '../Home.css';
 
-const Home =(props) => {
+const Home =({imageSrc}) => {
     
         return (
-            <div>
-                <h1>{props.beers}</h1>
+            <div className="backgrnd">
+                <img src={imageSrc} alt="bar" className="backImage"   />
+                <h1>Welcome, let's drink!</h1>
             </div>
         )
-    }
+    };
 
 export default Home;

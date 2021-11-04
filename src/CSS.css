@@ -1,0 +1,76 @@
+.beerCard {
+    /* max-width: 500px;
+    margin: 1rem; */
+    box-shadow: 0 0 10px 5px gray;
+    border-radius: 0.2rem;
+    min-width: 28rem;
+    display: flex;
+}
+
+.lagerCard {
+    flex-grow: 1;
+}
+
+.beerImage {
+    margin-top: 10px;
+    height: 500px;
+    width: 14rem;
+    /* height: 30rem; */
+    /* object-fit: cover; */
+}
+
+.allBeers {
+    margin: 4rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+    justify-content: center;
+}
+
+@media screen and (min-width:600px) {
+    .allBeers{
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 50rem));
+    }
+    .beerCard{
+        flex-direction: column;
+        text-align: center;
+        min-width: 14rem;
+    
+    .beerImage {
+        width: 100%;
+        height: 12rem;
+    }
+    }
+}
+
+
+body {
+    /* background-color: rgb(137, 16, 173); */
+}
+
+body {
+    /* background-color: rgb(71, 71, 70); */
+    background: url("./Images/toss_beer.jpg");
+    opacity: 2.8;
+    background-size: cover;
+    height: auto;
+}
+
+.backImage {
+    /* background: url("./Images/bar.jpg");  */
+    /* opacity: 2.8; */
+    /* background-size: cover; */
+    /* height: auto;  */
+    /* width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; */
+    /* background-image: ${(props) =>
+      `url(${require(`../images/${props.backgroundImage}`).default})`}; */
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;  */
+  
+}
