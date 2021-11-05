@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import "../SignIn.css"
 
 const SignIn = (props) => {
@@ -19,16 +18,6 @@ const SignIn = (props) => {
             console.log(data);
             props.setUser(data.user);
           }
-        //   axios.post('/user', {
-        //     firstName: 'Fred',
-        //     lastName: 'Flintstone'
-        //   })
-        //   .then(function (response) {
-        //     console.log(response);
-        //   })
-        //   .catch(function (error) {
-        //     console.log(error);
-        //   });
 
     return (
         <div className="login">

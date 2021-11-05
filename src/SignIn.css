@@ -1,5 +1,9 @@
 body {
     background-size: cover;
+    /* background: url("./Images/toss_beer.jpg"); */
+    opacity: 2.8;
+    background-size: cover;
+    height: auto;
     font-family: sans-serif;
 }
 
